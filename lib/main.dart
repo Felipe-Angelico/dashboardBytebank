@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/dashboard.dart';
 
 void main() {
   runApp(BytebankApp());
@@ -10,28 +11,16 @@ class BytebankApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.green[900],
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Dashboard'),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blue[700],
+          textTheme: ButtonTextTheme.primary,
         ),
-        body: Column(
-          children: <Widget>[
-            Image.asset('images/bytebank_logo.png'),
-            Container(
-              width: 150,
-              height: 100,
-              color: Colors.green[900],
-              child: Column(
-                children: <Widget>[
-                  Icon(Icons.people),
-                  Text('Contatos'),
-                ],
-              ),
-            ),
-          ],
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.green[900],
+          secondary: Colors.blue[700],
         ),
       ),
+      home: Dashboard(),
     );
   }
 }
